@@ -37,4 +37,11 @@ public class Library {
         collection.add(book);
     }
 
+    public void removeBook(String title) throws Exception {
+        List<Book> booksToRemove = getCollection(title);
+        if (booksToRemove.isEmpty()) {
+            throw new Exception("No books found with the title: " + title);
+        }
+        collection.removeAll(booksToRemove);
+    }
 }
